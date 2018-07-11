@@ -11,15 +11,19 @@ import java.util.Map;
 @Component
 public class PrimaryKeyAnalyzer {
 
-    public Map<String, String> getPrimaryKeys(Connection connection, String tableName) throws SQLException {
+    public Map<String, String> getPrimaryKeys(Connection connection, String tableName) {
         Map<String, String> result = new HashMap<>();
-        ResultSet primaryKeys = connection.getMetaData().getPrimaryKeys(null, null, tableName);
-        while (primaryKeys.next()) {
-            String columnName = primaryKeys.getString("COLUMN_NAME");
-            String primaryKeyName = primaryKeys.getString("PK_NAME");
-            result.put(columnName, primaryKeyName);
+        try {
+            ResultSet primaryKeys = connection.getMetaData().getPrimaryKeys(null, null, tableName);
+            while (primaryKeys.next()) {
+                String columnName = primaryKeys.getString("COLUMN_NAME");
+                String primaryKeyName = primaryKeys.getString("PK_NAME");
+                result.put(columnName, primaryKeyName);
+            }
+            primaryKeys.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        primaryKeys.close();
         return result;
     }
 

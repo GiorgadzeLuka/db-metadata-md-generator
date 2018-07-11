@@ -27,7 +27,19 @@ public class DbTablesAnalyzer {
 
         long endTime = System.nanoTime();
         long durationInMilliSeconds = (endTime - startTime) / 1000000;
-        System.out.println("done in: " + durationInMilliSeconds);
+        System.out.println("Regular done in: " + durationInMilliSeconds);
+
+        return tables;
+    }
+
+    public List<Table> generateDbTablesStructureParallel() throws SQLException, InterruptedException {
+        long startTime = System.nanoTime();
+
+        List<Table> tables = tableAnalyzer.getTableDataParallel();
+
+        long endTime = System.nanoTime();
+        long durationInMilliSeconds = (endTime - startTime) / 1000000;
+        System.out.println("Parallel done in: " + durationInMilliSeconds + ", table count: " + tables.size());
 
         return tables;
     }

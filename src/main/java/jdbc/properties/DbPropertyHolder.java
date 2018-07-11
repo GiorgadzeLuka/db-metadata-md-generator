@@ -13,6 +13,8 @@ public class DbPropertyHolder {
     private String password;
     @Value("${driverName:oracle.jdbc.driver.OracleDriver}")
     private String driverName;
+    @Value("${schemaName:CDL}")
+    private String schemaName;
     @Value("${poolSize:10}")
     private String poolSize;
 
@@ -36,4 +38,7 @@ public class DbPropertyHolder {
         return Integer.valueOf(poolSize);
     }
 
+    public String schemaName() {
+        return schemaName;
+    }
 }
