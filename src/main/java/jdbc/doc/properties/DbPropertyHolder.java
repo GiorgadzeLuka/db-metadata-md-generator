@@ -1,4 +1,4 @@
-package jdbc.properties;
+package jdbc.doc.properties;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -34,11 +34,11 @@ public class DbPropertyHolder {
         return driverName;
     }
 
-    public int poolSize() {
-        return Integer.valueOf(poolSize);
-    }
-
     public String schemaName() {
         return schemaName;
+    }
+
+    public int poolSize() {
+        return Integer.valueOf(poolSize);
     }
 }

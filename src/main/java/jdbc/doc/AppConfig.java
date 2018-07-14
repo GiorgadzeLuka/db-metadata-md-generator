@@ -1,4 +1,4 @@
-package jdbc;
+package jdbc.doc;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
-@ComponentScan({"jdbc"})
+@ComponentScan
 @PropertySource({"classpath:db.properties"})
 public class AppConfig {
 

@@ -1,6 +1,6 @@
-package jdbc.connection;
+package jdbc.doc.connection;
 
-import jdbc.properties.DbPropertyHolder;
+import jdbc.doc.properties.DbPropertyHolder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,7 @@ public class ConnectionManager {
 
     public Connection getConnection() {
         try {
-            int MAX_WAITING_TIME = 2;
+            int MAX_WAITING_TIME = 10;
             Connection connection = connections.poll(MAX_WAITING_TIME, TimeUnit.SECONDS);
             if (connection != null) {
                 LOGGER.debug("Connection " + connection + " took from connection pool");

@@ -1,15 +1,15 @@
-package jdbc.data;
+package jdbc.doc.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.List;
-import java.util.Map;
 
 @Data
 @AllArgsConstructor
 public class Table {
     private String tableName;
+    private String primaryKeyName;
     private List<Column> columns;
-    private Map<String, String> primaryKeys;
+    private List<Index> indices;
 }
