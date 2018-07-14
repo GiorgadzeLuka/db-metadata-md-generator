@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups>
+    <group>
+        <groupName>Company data related tables</groupName>
+        <patterns>
+            <pattern>(COMPANY)|(ADDRESS)|(BRIDGE)|(CALENDAR)|(COMPANY_DETAILS)|(COMPANY_TYPE)|(DOCUMENT)|(EQUIPMENT)|(LOGO)|(PRODUCT)|(RATING)|(SPECIALIZATION)|(TRADE_LANE)|(TRANSPORT_MODE)|(WAREHOUSE)
+            </pattern>
+        </patterns>
+    </group>
+    <group>
+        <groupName>User related tables</groupName>
+        <patterns>
+            <pattern>(USER_INFO)|(POSITION)|(ROLE)</pattern>
+        </patterns>
+    </group>
+    <group>
+        <groupName>Private directories related tables</groupName>
+        <patterns>
+            <pattern>(PR_DIR)|(PR_DIR_INVITE)|(PREFERRED_COMPANY)</pattern>
+        </patterns>
+    </group>
+    <group>
+        <groupName>Rateshop related tables</groupName>
+        <patterns>
+            <pattern>(RATE_SHOP_SEARCHES)|(RATE_SHOP_SEARCH_RESULTS)</pattern>
+        </patterns>
+    </group>
+    <group>
+        <groupName>All tables</groupName>
+        <patterns>
+            <pattern>.*</pattern>
+        </patterns>
+    </group>
+</groups>
